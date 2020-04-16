@@ -18,6 +18,9 @@ const Users = React.lazy(() => {
 const Home = React.lazy(() => {
   return import("../views/Home/Home");
 });
+const User = React.lazy(() => {
+  return import("../views/Users/User/User");
+});
 
 //imagine that our chat is a big project and use React.Lazy for code spliting
 
@@ -25,6 +28,10 @@ const routes = [
   {
     path: "/users",
     component: Users,
+  },
+  {
+    path: "/user",
+    component: User,
   },
   {
     path: "/news",
