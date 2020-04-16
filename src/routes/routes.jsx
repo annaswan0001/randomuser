@@ -13,7 +13,7 @@ const Meetings = React.lazy(() => {
   return import("../views/Meetings/Mettings");
 });
 const Users = React.lazy(() => {
-  return import("../views/Users/Users");
+  return import("../views/Users/UsersLists");
 });
 const Home = React.lazy(() => {
   return import("../views/Home/Home");

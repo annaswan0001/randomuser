@@ -1,10 +1,63 @@
+import * as actionsType from '../actions/actionTypes'
 
+const initialState = {
+    usersData:[],
+    userData:[],
+    loading:false,
+    error:false,
+    filter:"",
+    
+}
 
-const initialState = {}
-
-export default (state = initialState, { type, payload }) => {
-    switch (type) {
+export default (state = initialState, action) => {
+    switch (action.type) {
+        case actionsType.USERS_FETCH_START:{
+            return{
+                ...state, loading:true, error:false
+            }
+        }
+        case actionsType.USERS_FETCH_SUCCESS:{
+            return{
+                ...state, 
+                loading:false, 
+               usersData:[...state.usersData,...action.users]
+            }
+        }
+        case actionsType.USERS_FETCH_FAIL:{
+            return{
+                ...state, 
+               loading:false, 
+               error:true
+            }
+        }
+        case actionsType.USERS_FILTER:{
+            return{
+                ...state,
+                filter:action.filter
+            }
+        }
+        case actionsType.USER_FETCH_START:{
+            return{
+                ...state, loading:true, error:false
+            }
+        }
+        case actionsType.USER_FETCH_SUCCESS:{
+            return{
+                ...state, 
+                loading:false, 
+               userData:[...state.userData,...action.user]
+            }
+        }
+        case actionsType.USER_FETCH_FAIL:{
+            return{
+                ...state, 
+               loading:false, 
+               error:true
+            }
+        }
     default:
         return state
     }
 }
+
+

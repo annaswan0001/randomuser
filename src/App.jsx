@@ -8,7 +8,10 @@ const App = () => {
   let routes = (
     <Switch>
       {appRoutes.map((route, i) => (
-        <Route path={route.path} component={route.component} />
+        <Route 
+        key={route.path}
+        path={route.path} 
+        component={route.component} />
       ))}
     </Switch>
   );

@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga'
 import App from './App.jsx'
-
+import "./index.css"
 import rootReducer from './redux/reducers'
 // import {watchAuth, watchBurgerBuilder,watchMakeOrder} from './store/sagas/index'
 
