@@ -30,7 +30,7 @@
 
 }
 
-@media (min-width: 499px) {
+@media (max-width: 499px) {
     .Button {
         font-size: 0.7rem;
         padding: 4px 10px;
