@@ -1,14 +1,13 @@
 import axios from "axios";
 import * as actionsType from "../actions/actionTypes";
 
-
-
-//Actions provide set users data
+//USERS
 export const usersInit = (users) => (dispatch) => {
   dispatch(usersFetchStart());
   if (users.length < 100) {
     axios
-      .get("https://randomuser.me/api/?results=50&inc=name,login")
+      .get("https://randomuser.me/api/?results=50")
+      //.get("https://randomuser.me/api/?results=50&inc=name,login,picture,id")
       .then((res) => {
         console.log(res.data.results);
         dispatch(usersFetchSuccsess(res.data.results));
@@ -20,7 +19,6 @@ export const usersInit = (users) => (dispatch) => {
     return;
   }
 };
-
 export const usersFetchStart = () => ({
   type: actionsType.USERS_FETCH_START,
 });
@@ -32,28 +30,44 @@ export const usersFetchFail = () => ({
   type: actionsType.USERS_FETCH_FAIL,
 });
 
-//Action provide users filtering
+//Action provides users filtering
 export const usersFilter = (filter) => ({
   type: actionsType.USERS_FILTER,
   filter,
 });
 
-//Action to set detailed userData
-export const getUserInfo = (userUuid) => (dispatch) => {
-  dispatch(userFetchStart());
-if(userUuid){
-  axios
-    .get(`https://randomuser.me/api?uuid=${userUuid}`)
-    .then((res) => {
-      console.log(res.data.results);
-      dispatch(userFetchSuccsess(res.data.results));
-    })
-    .catch((err) => {
-      dispatch(userFetchFail());
-    });
-};
-}
+//Action provides reset userList data
+export const usersReset = () => ({
+  type: actionsType.USERS_RESET,
+});
 
+//Action provides refreth userList data
+export const userListRefresh = () => (dispatch, getState) => {
+  dispatch(usersReset());
+  console.log(getState().users.usersData);
+  dispatch(usersInit(getState().users.usersData));
+};
+
+
+
+//USER
+export const getUserInfo = (user) => (dispatch) => {
+  dispatch(userFetchStart());
+  if (user) {
+    dispatch(userFetchSuccsess(user));
+
+    // if randomUser had below setting - we could have been to get user data by uuid
+    // axios
+    //   .get(`https://randomuser.me/api?uuid=${userUuid}`)
+    //   .then((res) => {
+    //     console.log(res.data.results);
+    //     dispatch(userFetchSuccsess(res.data.results));
+    //   })
+    //   .catch((err) => {
+    //     dispatch(userFetchFail()); t
+    //   });
+  }
+};
 
 export const userFetchStart = () => ({
   type: actionsType.USER_FETCH_START,
@@ -65,3 +79,5 @@ export const userFetchSuccsess = (user) => ({
 export const userFetchFail = () => ({
   type: actionsType.USER_FETCH_FAIL,
 });
+
+

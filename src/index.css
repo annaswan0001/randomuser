@@ -7,3 +7,7 @@ body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #A9A9A9;
+  opacity: 1; /* Firefox */
+}

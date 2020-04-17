@@ -1,0 +1,49 @@
+/* .Input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 20px;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: text;
+    display: inline-flex;
+    position: relative;
+    font-size: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.1876em;
+    letter-spacing: 0.00938em;
+} */
+
+.Label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.InputElement {
+    outline: none;
+    display: block;
+    width: 90%;
+    box-sizing: border-box;
+    height: 1.1876em;
+    margin: 0;
+    min-width: 0;
+    background: #FAFAFA;
+    animation-name: mui-auto-fill-cancel;
+    -webkit-tap-highlight-color: transparent;
+    padding: 22px 14px;
+    border: 1px solid #ccc;
+    color:black;
+    font-size: 16px;
+}
+
+.InputElement:focus {
+    outline: none;
+}
+
+@media (min-width: 499px) {
+    .InputElement {
+    width: 20%;;
+    }
+}

@@ -1,10 +1,15 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { connect } from "react-redux";
-import{Route}from 'react-router-dom'
-import { usersInit, usersFilter, getUserInfo } from "../../redux/actions/usersAction";
+import {
+  usersInit,
+  usersFilter,
+  getUserInfo,
+  userListRefresh,
+} from "../../redux/actions/usersAction";
 import UserList from "./UserList/UserList";
 import Search from "./Search/Search";
-import User from './User/User'
+import classes from "./UserLists.module.css";
+import Button from "../../components/Button/Button";
 
 const filterUser = (users, filter) => {
   if (users) {
@@ -25,7 +30,14 @@ const filterUser = (users, filter) => {
 function Users(props) {
   const [isFetching, setIsFetching] = useState(false); // for making infinite-scroll
 
-  const { users, usersInit, usersFilter ,getUserInfo} = props;
+  const {
+    users,
+    usersInit,
+    usersFilter,
+    getUserInfo,
+    userListRefresh,
+    history,
+  } = props;
 
   const filterUsers = useCallback(
     (filter) => {
@@ -50,33 +62,56 @@ function Users(props) {
   }, [handleScroll]);
 
   useEffect(() => {
-    if (isFetching || users.length === 0) {
+    if (users.length === 0) {
       usersInit(users);
       setIsFetching(false);
-    } else if (users.length >= 100) {
-      setIsFetching(false);
-      return;
     }
-  }, [isFetching, usersInit, users]);
+  }, [usersInit, setIsFetching]);
 
-  const getDetailInfo = useCallback((uuid) => {
-    getUserInfo(uuid);
-    props.history.push(`user/${uuid}`)
-  }, []);
+  useEffect(() => {
+    if (isFetching) {
+      usersInit(users);
+      setIsFetching(false);
+    }
+  }, [isFetching, usersInit, users, setIsFetching]);
+
+  const getDetailInfo = useCallback(
+    (uuid, allUsers) => {
+      const user = allUsers.filter((user) => user.login.uuid === uuid);
+      console.log("detail", user, uuid, users);
+      getUserInfo(user);
+      history.push(`user/${uuid}`);
+    },
+    [users, getUserInfo, history]
+  );
+
+  const handleDownload = () => {
+    console.log("refresh");
+    userListRefresh();
+  };
 
   return (
     <div>
-      <Search filterUsers={filterUsers} />
-      {props.users &&
-        props.users.map((user) => (
-          <UserList
-            getDetailInfo={() => getDetailInfo(user.login.uuid)}
-            key={user.login.uuid}
-            user={user}
-          />
-          
-        ))}
-
+      <div className={classes.Search}>
+        <Search filterUsers={filterUsers} />
+        <div className={classes.ButtonRefresh}>
+          <Button onClick={handleDownload}> Download new users</Button>
+        </div>
+      </div>
+      <div className={classes.CardListContainer}>
+        <ul className={classes.CardList}>
+          {props.users &&
+            props.users.map((user) => (
+              <UserList
+                getDetailInfo={() =>
+                  getDetailInfo(user.login.uuid, props.users)
+                }
+                key={user.login.uuid}
+                user={user}
+              />
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -85,4 +120,9 @@ const mapStateToProps = (state) => ({
   users: filterUser(state.users.usersData, state.users.filter),
 });
 
-export default connect(mapStateToProps, { usersInit, usersFilter,getUserInfo })(Users);
+export default connect(mapStateToProps, {
+  usersInit,
+  usersFilter,
+  getUserInfo,
+  userListRefresh,
+})(Users);

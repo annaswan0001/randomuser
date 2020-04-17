@@ -8,22 +8,17 @@ import createSagaMiddleware from 'redux-saga'
 import App from './App.jsx'
 import "./index.css"
 import rootReducer from './redux/reducers'
-// import {watchAuth, watchBurgerBuilder,watchMakeOrder} from './store/sagas/index'
+
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
 const sagaMiddleware = createSagaMiddleware()
-//1) const sagaMiddleware = createSagaMiddleware()
-//2) added to applyMiddleware
-//3) sagaMiddleware.run(rootSaga)
+
 
 const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk,sagaMiddleware )
 ));
 
-// sagaMiddleware.run(watchAuth)
-// sagaMiddleware.run(watchBurgerBuilder)
-// sagaMiddleware.run(watchMakeOrder)
 
 const app = (
     <Provider store={store}>

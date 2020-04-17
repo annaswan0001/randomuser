@@ -30,6 +30,12 @@ export default (state = initialState, action) => {
                error:true
             }
         }
+        case actionsType.USERS_RESET:{
+            return{
+                ...state, 
+               usersData:[]
+            }
+        }
         case actionsType.USERS_FILTER:{
             return{
                 ...state,
@@ -45,7 +51,7 @@ export default (state = initialState, action) => {
             return{
                 ...state, 
                 loading:false, 
-               userData:[...state.userData,...action.user]
+               userData:action.user
             }
         }
         case actionsType.USER_FETCH_FAIL:{

@@ -13,8 +13,6 @@
   display: block;
 }
 
-
-
 @media (min-width: 500px) {
   .NavigationItem {
     margin: 0;
@@ -32,6 +30,6 @@
 
   .NavigationItem a:hover,
   .NavigationItem a:active {
-    background-color: #40a4c8; 
+    background-color: rgba(156, 39, 176, 0.5); 
   }
 }
