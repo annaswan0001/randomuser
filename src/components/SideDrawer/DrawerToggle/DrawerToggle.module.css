@@ -21,7 +21,7 @@
 .Blue div{
     background-color: #1976d2
 }
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .DrawerToggle {
         display: none;
     }

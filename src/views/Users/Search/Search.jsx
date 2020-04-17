@@ -34,7 +34,7 @@ export default function Search(props) {
         type="text"
         value={enteredFilter}
         onChange={changeInputValue}
-        placeholder="first(last) name"
+        placeholder="First(last) name"
         name="filter"
       />
 </React.Fragment>

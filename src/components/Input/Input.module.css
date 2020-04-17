@@ -25,10 +25,11 @@
     outline: none;
     display: block;
     width: 90%;
+
     box-sizing: border-box;
     height: 1.1876em;
     margin: 0;
-    min-width: 0;
+    min-width: 260px;
     background: #FAFAFA;
     animation-name: mui-auto-fill-cancel;
     -webkit-tap-highlight-color: transparent;

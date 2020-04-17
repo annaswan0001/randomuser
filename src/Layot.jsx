@@ -12,7 +12,6 @@ const Layot = (props) => {
   };
   return (
     <React.Fragment>
-    
       <div>
         <Toolbar
           clicked={handleSideDrawer}

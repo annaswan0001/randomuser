@@ -21,8 +21,6 @@ export default function UserList(props) {
           </p>
         </div>
       </div>
-
-      {/* {props.user.name.first} {props.user.name.last} */}
     </li>
   );
 }
