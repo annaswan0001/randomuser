@@ -1,2 +1,0 @@
-(this.webpackJsonprandomuser=this.webpackJsonprandomuser||[]).push([[8],{88:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return o}));var a=t(0),r=t.n(a);function o(){return r.a.createElement(r.a.Fragment,null,r.a.createElement("h1",null,"Welcome to Free Chat Rooms!"),r.a.createElement("h2",null,"Chat Online With No Registration!"))}}}]);
-//# sourceMappingURL=8.09fbe94f.chunk.js.map

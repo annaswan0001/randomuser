@@ -1,2 +1,0 @@
-(this.webpackJsonprandomuser=this.webpackJsonprandomuser||[]).push([[10],{85:function(n,e,r){"use strict";r.r(e),r.d(e,"default",(function(){return s}));var t=r(0),u=r.n(t);function s(){return u.a.createElement("div",null,"Hello, I am news")}}}]);
-//# sourceMappingURL=10.2166f0e4.chunk.js.map

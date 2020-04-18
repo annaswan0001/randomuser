@@ -1,0 +1,2 @@
+(this.webpackJsonprandomuser=this.webpackJsonprandomuser||[]).push([[6],{87:function(e,n,r){"use strict";r.r(n),r.d(n,"default",(function(){return a}));var t=r(0),u=r.n(t);function a(){return u.a.createElement("div",null,"Hello, I am people")}}}]);
+//# sourceMappingURL=6.53e9d495.chunk.js.map

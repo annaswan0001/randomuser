@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/News/News.jsx"],"names":["Map"],"mappings":"0GAAA,mEAEe,SAASA,IACpB,OACI","file":"static/js/10.1613103a.chunk.js","sourcesContent":["import React from 'react'\n\nexport default function Map() {\n    return (\n        <div>\n            Hello, I am news\n        </div>\n    )\n}\n"],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/Meetings/Mettings.jsx"],"names":["Map"],"mappings":"yGAAA,mEAEe,SAASA,IACpB,OACI","file":"static/js/9.47e2434b.chunk.js","sourcesContent":["import React from 'react'\n\nexport default function Map() {\n    return (\n        <div>\n            Hello, I am meetings\n        </div>\n    )\n}\n"],"sourceRoot":""}

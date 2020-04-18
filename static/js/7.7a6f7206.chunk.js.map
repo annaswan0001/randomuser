@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/Events/Events.jsx"],"names":["Map"],"mappings":"yGAAA,mEAEe,SAASA,IACpB,OACI","file":"static/js/7.7a6f7206.chunk.js","sourcesContent":["import React from 'react'\n\nexport default function Map() {\n    return (\n        <div>\n            Hello, I am events\n        </div>\n    )\n}\n"],"sourceRoot":""}

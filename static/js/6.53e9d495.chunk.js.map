@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/Chat/Chat.jsx"],"names":["Chat"],"mappings":"yGAAA,mEAEe,SAASA,IACpB,OACI","file":"static/js/6.53e9d495.chunk.js","sourcesContent":["import React from 'react'\n\nexport default function Chat() {\n    return (\n        <div>\n            Hello, I am people\n        </div>\n    )\n}\n"],"sourceRoot":""}
