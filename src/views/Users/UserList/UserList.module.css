@@ -1,4 +1,4 @@
-.CardList{
+.CardList {
   display: block;
   position: relative;
   width: 100%;
@@ -7,16 +7,14 @@
 
 /* CARDS SECTION */
 
-.Cards li
-{
+.Cards li {
   display: block;
   position: relative;
   width: 100%;
   padding-bottom: 10px;
 }
 
-.Card
-{
+.Card {
   position: relative;
   background-color: #fafafa;
   height: 100px;
@@ -31,46 +29,41 @@
 }
 
 /* CARDS CONTENT SECTION */
-.ContainText
-{
+.ContainText {
   position: absolute;
   width: 76%;
-  color:#1976d2;
+  color: #1976d2;
   top: -2px;
   left: 90px;
   text-align: justify;
 }
 
-.ContainText p
-{
+.ContainText p {
   position: absolute;
   top: 30px;
   font-size: 1rem;
   color: #202020;
 }
 
-.Face
-{
+.Face {
   position: relative;
   height: 70px;
   width: 70px;
   top: 10px;
   left: 10px;
 }
-.Face img{
-    border-radius: 50%; 
+.Face img {
+  border-radius: 50%;
 }
 
-.Face h2
-{
+.Face h2 {
   position: relative;
   left: 3px;
   top: 20px;
   transform: rotate(90deg);
 }
 
-.Extra
-{
+.Extra {
   position: relative;
   width: 90%;
   top: 7px;
@@ -79,8 +72,7 @@
   font-weight: light;
 }
 
-.Disappear
-{
+.Disappear {
   position: relative;
   width: 90%;
   height: 40%;
@@ -91,26 +83,21 @@
   font-weight: thin;
 }
 
-.Appear
-{
+.Appear {
   animation: appear 1.2s ease;
   animation-fill-mode: forwards;
 }
 
-@keyframes appear
-{
-  0%
-  {
+@keyframes appear {
+  0% {
     opacity: 0;
   }
-  100%
-  {
+  100% {
     opacity: 1;
   }
 }
 
-.Transform
-{
+.Transform {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -118,8 +105,7 @@
   transition: all 0.2s ease;
 }
 
-.Transform-active
-{
+.Transform-active {
   background-color: #fafafa;
   height: 300px;
   width: 100%;
@@ -129,12 +115,11 @@
 }
 
 @media (max-width: 499px) {
-    .ContainText p
-    {
-      font-size: 0.7rem;
-  
-    }
-    .ContainText h3{
-        font-size: 0.85rem;
-    }
+  .ContainText p {
+    font-size: 0.7rem;
+  }
+  .ContainText h3 {
+    font-size: 0.85rem;
+  }
+ 
 }

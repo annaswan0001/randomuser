@@ -1,7 +1,8 @@
 .CardList{
     display: block;
     position: relative;
-    width: 85%;
+    width: 70%;
+    max-width: 900px;
     list-style: none;
     text-decoration: none;
     padding-left: 20px;
@@ -18,3 +19,10 @@
 .ButtonRefresh{
     margin-top: 20px;
 }
+@media (max-width: 600px) {
+    .CardList{
+        width: 85%;
+       
+    }
+   
+  }
