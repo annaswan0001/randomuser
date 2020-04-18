@@ -7,7 +7,7 @@ export default function UserList(props) {
     <li className={classes.CardList} onClick={props.getDetailInfo}>
       <div className={classesArray.join(" ")}>
         <div className={classes.Face}>
-          <img src={props.user.picture.medium} alt="photo" />
+          <img src={props.user.picture.medium} alt="user" />
         </div>
         <div className={classes.ContainText}>
           <h3>

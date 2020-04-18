@@ -10,8 +10,15 @@ import UserList from "./UserList/UserList";
 import Search from "./Search/Search";
 import classes from "./UserLists.module.css";
 import Button from "../../components/Button/Button";
+import { createSelector } from 'reselect'
 
-const filterUser = (users, filter) => {
+//reselect for memo selectors
+const getUsers = (state) => state.users.usersData
+const getFilter = (state) => state.users.filter
+
+const filterUser = createSelector(
+  [ getUsers, getFilter ],
+  (users, filter)=> {
   if (users) {
     if (!filter) {
       return users;
@@ -21,11 +28,11 @@ const filterUser = (users, filter) => {
           user.name.first.toLowerCase() + " " + user.name.last.toLowerCase();
         return fullName.indexOf(filter.toLowerCase()) >= 0;
       });
-      console.log(newUsers);
+
       return newUsers;
     }
   }
-}; // utils for correct filtering users from MapStateTpProps
+}); // utils for correct filtering users from MapStateTpProps
 
 function Users(props) {
   const [isFetching, setIsFetching] = useState(false); // for making infinite-scroll
@@ -78,15 +85,13 @@ function Users(props) {
   const getDetailInfo = useCallback(
     (uuid, allUsers) => {
       const user = allUsers.filter((user) => user.login.uuid === uuid);
-      console.log("detail", user, uuid, users);
       getUserInfo(user);
       history.push(`user/${uuid}`);
     },
-    [users, getUserInfo, history]
+    [ getUserInfo, history]
   );
 
   const handleDownload = () => {
-    console.log("refresh");
     userListRefresh();
   };
 
@@ -117,7 +122,7 @@ function Users(props) {
 }
 
 const mapStateToProps = (state) => ({
-  users: filterUser(state.users.usersData, state.users.filter),
+  users: filterUser(state),
 });
 
 export default connect(mapStateToProps, {

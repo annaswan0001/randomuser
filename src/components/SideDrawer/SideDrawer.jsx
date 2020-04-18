@@ -20,7 +20,7 @@ export default function SideDrawer(props) {
         <div className={classes.Logo}>
           <Logo />
         </div >
-        <nav show={props.open} onClick={props.clicked}>
+        <nav  onClick={props.clicked}>
           <NavigationItems />
         </nav>
       </div>

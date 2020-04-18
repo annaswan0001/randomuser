@@ -13,7 +13,7 @@
   display: block;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .NavigationItem {
     margin: 0;
     display: flex;
@@ -32,4 +32,8 @@
   .NavigationItem a:active {
     background-color: rgba(156, 39, 176, 0.5); 
   }
+}
+
+.Selected{
+  background-color: rgba(156, 39, 176, 0.5); 
 }

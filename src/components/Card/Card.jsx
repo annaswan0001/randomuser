@@ -2,9 +2,6 @@ import React from "react";
 import classes from "./Card.module.css";
 
 export default function Card(props) {
-  const attachedClass1 = [classes.level, classes.center];
-  const attachedClass2 = [classes.points, classes.center];
-  const attachedClass3 = [classes.points, classes.center];
   return (
     <div className={classes.center}>
       <div className={classes.card}>
@@ -13,11 +10,11 @@ export default function Card(props) {
           {window.innerWidth>500? <img
             className={classes.useCard}
             src={props.user.picture.large}
-            alt="photo"
+            alt="user"
           />:<img
           className={classes.useCard}
           src={props.user.picture.medium}
-          alt="photo"
+          alt="user"
         />}
 
           <div className={classes.moreInfo}>

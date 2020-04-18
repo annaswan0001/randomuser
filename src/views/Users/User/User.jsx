@@ -1,10 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
 import UserCard from "../../../components/Card/Card";
 
 function User(props) {
-  let history = useHistory();
+  
   let user;
   if (props.user.length > 0) {
     user = (
@@ -17,7 +16,7 @@ function User(props) {
       </div>
     );
   } else {
-    user = <div>Choose user</div>;
+    user = <div>Choose user,please!</div>;
   }
   return <React.Fragment>{user}</React.Fragment>;
 }

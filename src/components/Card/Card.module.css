@@ -177,10 +177,23 @@
     font-size: 0.9em;
   }
 
-  
-  @media (max-width: 499px) {
+  @media (max-width: 600px) {
     .card {
-        width: 270px;
+      width: 460px;
+      height: 300px;
+      font-size: 0.9rem;
+    }
+    .card .general {
+      width: 285px;
+    }
+    .card .additional .moreInfo {
+      left: 160px;
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .card {
+        width: 90%;
         height: 250px;
       }
       .card .additional .userCard .level,
@@ -210,19 +223,34 @@
         line-height: 1.5rem;
       }
       .card .additional .moreInfo {
-        width: 170px;
-        left: 100px;
-        top:30px;
+        width: 60%;
+        left: 120px;
+        top:20%;
+        font-size: 0.8rem;
       }
       .card .general {
-        width: 170px;
-        font-size: 12px;
+        width: 67%;
+        font-size: 0.8rem;
 
       }
       .card .additional {
-        width: 90px;
+        width: 25%;
  
       }
 }
   
-  
+    
+@media (max-width: 399px) {
+  .card .additional .moreInfo {
+    left: 110px;
+  }
+  .card .general {
+    width: 72%;
+    font-size: 12px;
+
+  }
+  .card .additional  {
+    padding-left: 5px;
+
+  }
+}

@@ -9,8 +9,9 @@ export const usersInit = (users) => (dispatch) => {
       .get("https://randomuser.me/api/?results=50")
       //.get("https://randomuser.me/api/?results=50&inc=name,login,picture,id")
       .then((res) => {
-        console.log(res.data.results);
+
         dispatch(usersFetchSuccsess(res.data.results));
+       
       })
       .catch((err) => {
         dispatch(usersFetchFail());
@@ -55,7 +56,7 @@ export const getUserInfo = (user) => (dispatch) => {
   dispatch(userFetchStart());
   if (user) {
     dispatch(userFetchSuccsess(user));
-
+    // localStorage.setItem("user", user)
     // if randomUser had below setting - we could have been to get user data by uuid
     // axios
     //   .get(`https://randomuser.me/api?uuid=${userUuid}`)
